@@ -14,6 +14,18 @@
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />
   
   <script>
+   
+    // 渡された数値が0以上ではない場合に例外を投げる関数
+　　　　 　function assertPositiveNumber(num) {
+     if (num < 0) {
+      　throw new Error(`${num} is not positive.`);
+     }
+　 　　　　}
+   // 0未満の値を渡しているので、関数が例外を投げる
+   assertPositiveNumber(-1);
+  </script>
+  
+  <script>
   　　(function(s,t,a,n){s[t]||(s[t]=a,n=s[a]=function(){n.q.push(arguments)},
   　　n.q=[],n.v=2,n.l=1*new Date)})(window,"InstanaEumObject","ineum");
 
@@ -23,17 +35,6 @@
 　　</script>
 　　<script defer crossorigin="anonymous" src="https://128.168.150.67:446/eum/eum.min.js"></script>
   
- <script>
-   
-   // 渡された数値が0以上ではない場合に例外を投げる関数
-　　　　　function assertPositiveNumber(num) {
-    if (num < 0) {
-     　throw new Error(`${num} is not positive.`);
-    }
-　　　　　}
-   // 0未満の値を渡しているので、関数が例外を投げる
-   assertPositiveNumber(-1);
- </script>
 </head>
 
 <body onload="retrievePatientInformation()">
