@@ -17,13 +17,17 @@
    
     // 渡された数値が0以上ではない場合に例外を投げる関数
 　　　　 　function assertPositiveNumber() {
-     var num = -1;
      if (num < 0) {
       　throw new Error(`${num} is not positive.`);
      }
 　 　　　　}
    // 0未満の値を渡しているので、関数が例外を投げる
-   window.addEventListener('load', assertPositiveNumber);
+   window.addEventListener('load', () => {
+     setInterval(() => {
+       var x = Math.random() * 10 - 5;
+       assertPositiveNumber(x);
+     }
+   });
   </script>
   
   <script>
